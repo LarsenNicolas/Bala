@@ -1,0 +1,8 @@
+button:hover{
+    transition: 0.7s;
+    background-color: grey;
+}
+
+a {
+color: black;
+}

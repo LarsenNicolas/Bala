@@ -1,0 +1,36 @@
+h1 {
+  font-size: 24px;
+}
+
+.event-info {
+  margin-top: 20px;
+}
+
+.event-info p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+button{
+  transition: 0.7s;
+  border-radius: 6px;
+  border-color: rgb(255, 251, 251);
+}
+
+a{
+  transition: 0.7s;
+  border-radius: 6px;
+  border-color: rgb(255, 251, 251);
+}
+
+button:hover{
+  background-color: grey;
+}
+
+a:hover{
+  background-color: grey;
+}
+
+p{
+  margin-bottom: 0;
+}

@@ -1,0 +1,15 @@
+<div class="container" *ngIf="evento">
+  <img src={{evento.urlImagen}} class="bd-placeholder-img card-img-top" width="70%" height="225">
+  <h1 class="mt-3">{{ evento.artista }}</h1>
+  <div class="event-info">
+    <p>{{ evento.descripcion }}</p>
+    <p><i class="bi bi-calendar-date"></i> {{ evento.fecha | date: 'dd MMMM yyyy' }}</p>
+    <p><i class="bi bi-clock"></i> {{ evento.fecha | date: 'HH:mm' }} hs</p>
+    <p><i class="bi bi-geo-alt-fill"></i> {{ evento.ubicacion }}</p>
+  </div>
+
+  <div class="btn-group mx-auto w-50 mt-5">
+    <a href="evento" class="btn btn-dark text-light p-2 sing-in rounded w-100">Compra desde ${{ evento.precio }}</a>
+    <button type="button" class="btn btn-dark fw-bold text-light p-2 sing-in rounded w-25"><i class="bi bi-cart-plus"></i></button>
+  </div>
+</div>

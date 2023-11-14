@@ -1,0 +1,23 @@
+<div class="container">
+  <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom">
+  
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <img src="assets/img/4.png" class="isotipo">
+      <img src="assets/img/5.png" class="logotipo">
+    </a>
+
+    <ul class="nav nav-pills justify-content-center">
+
+      <!-- si hay un usuario logueado trae su nombre, sino habilita el boton de iniciar sesion -->
+      <li *ngIf="!username" class="nav-item"><a href="login" class="nav-link">Iniciar Sesión</a></li>
+      <li *ngIf="!username" class="nav-item"><a href="productos" class="nav-link">Todos los productos</a></li>
+      <li *ngIf="username" class="nav-item"><a href="login" class="nav-link disabled" >Bienvenido, {{username}}</a></li>
+
+      <li class="nav-item">
+        <a href="carrito" class="nav-link">
+          <i class="bi bi-cart-fill"></i>
+        </a>
+      </li>
+    </ul>
+  </header>
+</div>

@@ -1,0 +1,19 @@
+<div class="container mt-2">
+  <div class="col">
+    <div class="card shadow-sm zoom">
+      <img src={{evento.urlImagen}} class="bd-placeholder-img card-img-top" width="100%" height="225"/>
+      <div class="card-body">
+        <p class="card-text fw-bold">{{ evento.artista }} <small class="text-muted">${{ evento.precio }}</small></p>
+        <p class="text-muted mb-2 mt-1">{{ evento.fecha | date: 'dd/MM/yyyy HH:mm' }}, {{ evento.ubicacion }}</p>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group mx-auto w-50">
+            <a [routerLink]="'/evento/' + evento.id" class="btn btn-detalle text-white w-75">Ver detalles</a>
+            <button type="button" class="btn btn-detalle text-white w-25" (click)="agregarAlCarrito()"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

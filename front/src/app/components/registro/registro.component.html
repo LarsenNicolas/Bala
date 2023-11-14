@@ -1,0 +1,53 @@
+<div class="container w-25 my-5 px-0">
+    <div>
+        <h2 class="mb-4">Creá tu cuenta:</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+
+            <!-- Errores del email -->
+            <div *ngIf="f.email.invalid && f.email.touched" class="text-danger text-start">
+                <div *ngIf="f.email.errors?.['required']"><p class="ps-1 mb-2">Por favor, ingresá tu email</p></div>
+            </div>
+                                    
+            <div class="mb-3">
+                <label for="email" class="form-label d-none">Correo Electrónico:</label>
+                <input type="email" placeholder="Email" name="email" id="email" formControlName="email" class="form-control p-3" required>
+            </div>
+
+            <!-- Errores del usuario -->
+            <div *ngIf="f.username.invalid && f.username.touched" class="text-danger text-start">
+                <div *ngIf="f.username.errors?.['required']"><p class="ps-1 mb-2">Por favor, ingresá tu usuario</p></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="username" class="form-label d-none">Nombre:</label>
+                <input type="text" placeholder="Usuario" name="username" id="username" class="form-control p-3" formControlName="username" required>
+            </div>
+
+            <!-- Errores del formato de la contraseña -->
+            <div *ngIf="f.password.invalid && f.password.touched" class="text-danger text-start">
+                <div *ngIf="f.password.errors?.['required']"><p class="ps-1 mt-0 mb-2">Por favor, ingresá tu contraseña</p></div>
+                    <div *ngIf="f.password.errors?.['invalidFormat']">
+                    <p class="mt-0 mb-2">La contraseña tiene que tener:</p>  
+                        <ul class="ps-3 mb-0">
+                            <li *ngIf="f.password.errors?.['quantity']"><p class="mt-0 mb-2">Mínimo 13 caracteres</p></li>
+                            <li *ngIf="f.password.errors?.['uppercase']"><p class="mt-0 mb-2">Una mayúscula</p></li>
+                            <li *ngIf="f.password.errors?.['lowercase']"><p class="mt-0 mb-2">Una minúscula</p></li>
+                            <li *ngIf="f.password.errors?.['digit']"><p class="mt-0 mb-2">Un dígito</p></li>
+                            <li *ngIf="f.password.errors?.['specialChar']"><p class="mt-0 mb-2">Un carácter especial</p></li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label d-none">Contraseña:</label>
+                <input type="password" placeholder="Contraseña" name="password" id="password" formControlName="password" class="form-control p-3" required>
+            </div>
+
+            <button type="submit" class="btn btn-dark fw-bold text-light p-3 sing-in rounded w-100">Registrarse</button>
+        </form>
+        <hr>
+        <div class="mt-2">
+            <span>Ya tenés cuenta? <a class="fw-bold" routerLink="/login">Iniciá sesión!</a></span>
+        </div>
+    </div>
+

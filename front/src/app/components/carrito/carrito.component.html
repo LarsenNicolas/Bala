@@ -1,0 +1,39 @@
+<body>
+    <main class="container my-4">
+      <section class="productos">
+        <h2>Carrito</h2>
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th></th> 
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of carrito; let i = index">
+              <td>{{ item.artista }}</td>
+              <td>${{ item.precio }}</td>
+              <td>1</td>
+              <td>${{ item.precio }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="eliminarDelCarrito(i)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+  
+      <section class="resumen">
+        <h2>Resumen</h2>
+        <ul class="list-group">
+          <li class="list-group-item">Total de Productos: <span id="total-productos">{{ carrito.length }}</span></li>
+          <li class="list-group-item">Total a Pagar: <span id="total-pagar">${{ calcularTotal().toFixed(2) }}</span></li>
+        </ul>
+        <button id="comprar" class="btn btn-dark mt-1" (click)="comprar()">Comprar</button>
+      </section>
+    </main>
+  </body>
+  
